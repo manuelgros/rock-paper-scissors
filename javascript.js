@@ -1,5 +1,6 @@
-
+// Let 
 function getComputerChoice() {
+  // list 
   const choices = ['rock', 'paper', 'scissors']
   const computerChoice = choices[Math.floor(Math.random() *choices.length)];
   return computerChoice;
@@ -36,7 +37,7 @@ function game() {
   // start first round
   while (playerLife > 0 && computerLife > 0) {
   // set value for playerSelection and computerSelection
-  const playerSelection = prompt('Choose your weapon!').toLowerCase();
+  const playerSelection = prompt('Choose your weapon! Pick from: Rock, Paper, or Scissors').toLowerCase();
   const computerSelection = getComputerChoice();
 
     playRound(playerSelection, computerSelection);
