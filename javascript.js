@@ -62,7 +62,9 @@ function game() {
   // Declare winner of Game
   if (playerLife == 0) {
     console.log("The computer won, as you knew he would! - Game Over")
+    alert("The computer won, as you knew he would! - Game Over");
   } else {
     console.log("Hurray! Once again the human brain conquered the machine! - Game Over")
+    alert("Hurray! Once again the human brain conquered the machine! - Game Over")
   }
 }
