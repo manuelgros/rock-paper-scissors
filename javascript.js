@@ -26,7 +26,6 @@ function playRound(playerSelection, computerSelection) {
   } else if (playerSelection === 'scissors' && computerSelection === 'scissors') {
     return "tie";
   }
-  console.log (playerSelection, computerSelection);
 }
 
 function game() {
@@ -43,18 +42,20 @@ function game() {
     const computerSelection = getComputerChoice();
 
     playRound(playerSelection, computerSelection);
-    // set loserLife to (*Life -1)
+    // set loserLife = loserLife -1...
     if (playRound(playerSelection, computerSelection) == "playerWin") {
       computerLife -= 1;
       console.log(`You've won! Player: ${playerLife} | Computer: ${computerLife}`)
     } else if (playRound(playerSelection, computerSelection) == "computerWin") {
       playerLife -= 1;
       console.log(`You've lost! Player: ${playerLife} | Computer: ${computerLife}`)
+    // ...or if no one wins, leave Life as is and start new round
     } else {
       console.log(`That was a tie, try again. Player: ${playerLife} | Computer: ${computerLife}`)
     }
   // start next round - repeat until playerLife or computerLife reaches 0 
   }
+
   // Declare winner of Game
   if (playerLife == 0) {
     console.log("The computer won, as you knew he would! - Game Over")
