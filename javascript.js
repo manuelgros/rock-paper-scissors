@@ -11,7 +11,7 @@ const computerSelection = getComputerChoice()
    console.log(playerSelection);
    console.log(computerSelection);
 
-function singleRound(playerSelection, computerSelection) {
+function playRound(playerSelection, computerSelection) {
   if (playerSelection === 'rock' && computerSelection === 'rock'){
     return "It's a tie! Try again";
   } else if (playerSelection === 'rock' && computerSelection === 'paper') {
@@ -33,4 +33,4 @@ function singleRound(playerSelection, computerSelection) {
   }
 }
 
-console.log(singleRound(playerSelection, computerSelection));
+console.log(playRound(playerSelection, computerSelection));
