@@ -29,33 +29,31 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function game() {
-
-  // set playerLife to 5
+  // set playerLife and computerLife to 5
   let playerLife = 5;
-  // set computerLife to 5
   let computerLife = 5;
 
   // start first round
   while (playerLife > 0 && computerLife > 0) {
-    // set value for playerSelection and computerSelection
-    const playerSelection = prompt('Choose your weapon!').toLowerCase();
-    const computerSelection = getComputerChoice();
+  // set value for playerSelection and computerSelection
+  const playerSelection = prompt('Choose your weapon!').toLowerCase();
+  const computerSelection = getComputerChoice();
 
     playRound(playerSelection, computerSelection);
-    // set loserLife = loserLife -1...
-    if (playRound(playerSelection, computerSelection) == "playerWin") {
-      computerLife -= 1;
-      console.log(`You've won! Player: ${playerLife} | Computer: ${computerLife}`);
-      alert(`You've won! Player: ${playerLife} | Computer: ${computerLife}`);
-    } else if (playRound(playerSelection, computerSelection) == "computerWin") {
-      playerLife -= 1;
-      console.log(`You've lost! Player: ${playerLife} | Computer: ${computerLife}`);
-      alert(`You've lost! Player: ${playerLife} | Computer: ${computerLife}`);
-    // ...or if no one wins, leave Life as is and start new round
-    } else {
-      console.log(`That was a tie, try again. Player: ${playerLife} | Computer: ${computerLife}`);
-      alert(`That was a tie, try again. Player: ${playerLife} | Computer: ${computerLife}`)
-    }
+      // set loserLife = loserLife -1...
+      if (playRound(playerSelection, computerSelection) == "playerWin") {
+        computerLife -= 1;
+        console.log(`You've won! Player: ${playerLife} | Computer: ${computerLife}`);
+        alert(`You've won! Player: ${playerLife} | Computer: ${computerLife}`);
+      } else if (playRound(playerSelection, computerSelection) == "computerWin") {
+        playerLife -= 1;
+        console.log(`You've lost! Player: ${playerLife} | Computer: ${computerLife}`);
+        alert(`You've lost! Player: ${playerLife} | Computer: ${computerLife}`);
+      // ...or if no one wins, leave Life as is and start new round
+      } else {
+        console.log(`That was a tie, try again. Player: ${playerLife} | Computer: ${computerLife}`);
+        alert(`That was a tie, try again. Player: ${playerLife} | Computer: ${computerLife}`)
+      }
   // start next round - repeat until playerLife or computerLife reaches 0 
   }
 
