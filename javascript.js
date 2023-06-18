@@ -1,16 +1,15 @@
 
 function getComputerChoice() {
-  const choice = ['rock', 'paper', 'scissors']
-  let computerChoice = choice[Math.floor(Math.random() *choice.length)];
+  const choices = ['rock', 'paper', 'scissors']
+  const computerChoice = choices[Math.floor(Math.random() *choices.length)];
   return computerChoice;
 }
-
-console.log(getComputerChoice())
 
 const playerSelection = prompt('Choose your weapon!').toLowerCase()
 const computerSelection = getComputerChoice()
 
    console.log(playerSelection);
+   console.log(computerSelection);
 
 function singleRound(playerSelection, computerSelection) {
   if (playerSelection === 'rock' && computerSelection === 'rock'){
