@@ -66,5 +66,3 @@ function game() {
     console.log("Hurray! Once again the human brain conquered the machine! - Game Over")
   }
 }
-
-game();
