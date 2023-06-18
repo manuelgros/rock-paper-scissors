@@ -4,26 +4,18 @@ function getComputerChoice() {
   return computerChoice;
 }
 
-// Run a SINGLE ROUND and determine outcome 
+// Run SINGLE ROUND and determine outcome 
 function playRound(playerSelection, computerSelection) {
-  if (playerSelection === 'rock' && computerSelection === 'rock'){
+  if (playerSelection === computerSelection){
       return "tie";
-  } else if (playerSelection === 'rock' && computerSelection === 'paper') {
-      return "computerWin";
   } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
       return "playerWin";
   } else if (playerSelection === 'paper' && computerSelection === 'rock') {
       return "playerWin";
-  } else if (playerSelection === 'paper' && computerSelection === 'paper') {
-      return "tie";
-  } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
-      return "computerWin";
-  } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
-      return "computerWin";
   } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
       return "playerWin";
-  } else if (playerSelection === 'scissors' && computerSelection === 'scissors') {
-      return "tie";
+  } else {
+      return "computerWin";
   }
 }
 
