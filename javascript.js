@@ -7,28 +7,26 @@ function getComputerChoice() {
 
 function playRound(playerSelection, computerSelection) {
 
-  const playerSelection = prompt('Choose your weapon!').toLowerCase()
-  const computerSelection = getComputerChoice()
-
   if (playerSelection === 'rock' && computerSelection === 'rock'){
-    return tie;
+    return "tie";
   } else if (playerSelection === 'rock' && computerSelection === 'paper') {
-    return computerSelection;
+    return "computerWin";
   } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
-    return playerSelection;
+    return "playerWin";
   } else if (playerSelection === 'paper' && computerSelection === 'rock') {
-    return playerSelection;
+    return "playerWin";
   } else if (playerSelection === 'paper' && computerSelection === 'paper') {
-    return tie;
+    return "tie";
   } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
-    return computerSelection;
+    return "computerWin";
   } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
-    return computerSelection;
+    return "computerWin";
   } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
-    return playerSelection;
+    return "playerWin";
   } else if (playerSelection === 'scissors' && computerSelection === 'scissors') {
-    return tie
+    return "tie";
   }
+  console.log (playerSelection, computerSelection);
 }
 
 function game() {
@@ -39,14 +37,18 @@ function game() {
   let computerLife = 5;
 
   // start first round
-  while (playerLife > 0 || computerLife > 0) {
+  while (playerLife > 0 && computerLife > 0) {
+    // set value for playerSelection and computerSelection
+    const playerSelection = prompt('Choose your weapon!').toLowerCase();
+    const computerSelection = getComputerChoice();
+
     playRound(playerSelection, computerSelection);
     // set loserLife to (*Life -1)
-    if (playRound(playerSelection, computerSelection) = playerSelection) {
-      playerLife -= 1;
-      console.log(`You've won! Player: ${playerLife} | Computer: ${computerLife}`)
-    } else if (playRound(playerSelection, computerSelection) = computerSelection) {
+    if (playRound(playerSelection, computerSelection) == "playerWin") {
       computerLife -= 1;
+      console.log(`You've won! Player: ${playerLife} | Computer: ${computerLife}`)
+    } else if (playRound(playerSelection, computerSelection) == "computerWin") {
+      playerLife -= 1;
       console.log(`You've lost! Player: ${playerLife} | Computer: ${computerLife}`)
     } else {
       console.log(`That was a tie, try again. Player: ${playerLife} | Computer: ${computerLife}`)
@@ -60,3 +62,5 @@ function game() {
     console.log("Hurray! Once again the human brain conquered the machine! - Game Over")
   }
 }
+
+game();
