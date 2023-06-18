@@ -1,0 +1,20 @@
+PseudoCode for Rock, Paper, Scissors - Game
+
+Declare variable for playerChoice
+Declare variable for computerChoice
+
+Start Game
+Set playerLife to 5
+Set computerLife to 5
+Start first round
+
+Set playerChoice value to playerInput choice from array [ROCK,PAPER SCISSORS]
+Set computerChoice value randomly from array[ROCK, PAPER, SCISSORS]
+Compare playerChoice and computerChoice
+Determine winner of round
+Subtract 1 from loserLife
+
+Repeat game until playerLife or computerLife = 0
+Determine winner of game
+Declare winner 
+Reset the game
