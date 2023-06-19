@@ -26,15 +26,20 @@ function game() {
 
     if (playRound(playerSelection, computerSelection) == "playerWin") {
         computerLife -= 1;
-        console.log(`You've won! Player: ${playerLife} | Computer: ${computerLife}`);
-        alert(`You've won! ${playerSelection.substring(0, 1).toUpperCase()+playerSelection.substring(1)} beats ${computerSelection.substring(0, 1).toUpperCase()+computerSelection.substring(1)}. Player: ${playerLife} | Computer: ${computerLife}`);
+        let msg = `You've won! ${playerSelection.substring(0, 1).toUpperCase()+playerSelection.substring(1)} beats 
+                  ${computerSelection.substring(0, 1).toUpperCase()+computerSelection.substring(1)}. 
+                  Player: ${playerLife} | Computer: ${computerLife}`;
+        console.log(msg);
+        alert(msg);
     } else if (playRound(playerSelection, computerSelection) == "computerWin") {
         playerLife -= 1;
-        console.log(`You've lost! Player: ${playerLife} | Computer: ${computerLife}`);
-        alert(`You've lost! ${computerSelection.substring(0, 1).toUpperCase()+computerSelection.substring(1)} beats ${playerSelection.substring(0, 1).toUpperCase()+playerSelection.substring(1)}. Player: ${playerLife} | Computer: ${computerLife}`);
+        let msg = `You've lost! ${computerSelection.substring(0, 1).toUpperCase()+computerSelection.substring(1)} beats 
+                  ${playerSelection.substring(0, 1).toUpperCase()+playerSelection.substring(1)}. 
+                  Player: ${playerLife} | Computer: ${computerLife}`;
+        console.log(msg);
+        alert(msg);
     } else {
-        console.log(`That was a tie, try again. Player: ${playerLife} | Computer: ${computerLife}`);
-        alert(`That was a tie, try again. Player: ${playerLife} | Computer: ${computerLife}`)
+        let msg = `That was a tie, try again. Player: ${playerLife} | Computer: ${computerLife}`
     }
   }
 
