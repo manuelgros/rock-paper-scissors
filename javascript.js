@@ -8,8 +8,8 @@ function getComputerChoice() {
 function playRound(playerSelection, computerSelection) {
   return (playerSelection === computerSelection) ? "tie"
     : (playerSelection === 'rock' && computerSelection === 'scissors') ? "playerWin"
-    : (playerSelection === 'paper' && computerSelection === 'rock') ? "playerWin"
     : (playerSelection === 'scissors' && computerSelection === 'paper') ? "playerWin"
+    : (playerSelection === 'paper' && computerSelection === 'rock') ? "playerWin"
     : "computerWin";
 }
 
