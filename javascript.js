@@ -44,7 +44,6 @@ function game() {
         alert(msg);
     }
   }
-
   // Declare WINNER of game
   if (playerLife == 0) {
       console.log("The computer won, as you knew he would! - Game Over")
