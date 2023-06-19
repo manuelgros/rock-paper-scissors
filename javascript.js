@@ -6,17 +6,11 @@ function getComputerChoice() {
 
 // Run SINGLE ROUND and determine outcome 
 function playRound(playerSelection, computerSelection) {
-  if (playerSelection === computerSelection){
-      return "tie";
-  } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
-      return "playerWin";
-  } else if (playerSelection === 'paper' && computerSelection === 'rock') {
-      return "playerWin";
-  } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
-      return "playerWin";
-  } else {
-      return "computerWin";
-  }
+  return (playerSelection === computerSelection) ? "tie"
+    : (playerSelection === 'rock' && computerSelection === 'scissors') ? "playerWin"
+    : (playerSelection === 'paper' && computerSelection === 'rock') ? "playerWin"
+    : (playerSelection === 'scissors' && computerSelection === 'paper') ? "playerWin"
+    : "computerWin";
 }
 
 // Determine START and END of game and keep track of points
