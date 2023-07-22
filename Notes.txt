@@ -29,7 +29,7 @@ Set player life to 0
 Set computer life to 0
 
 Player selects choice through button [ROCK, PAPER, Scissor]
-Player selection starts round
+Start Round with PlayerSelection 
 Computer choice is taken randomly from [ROCK,PAPER, Scissor]
 Player Selection is compared to Computer Selection 
 Determine winner of Round
@@ -39,3 +39,4 @@ Points UI is adjusted
 Repeat Game until on side reaches 5 points
 Determine winner of Game
 Declare winner of Game
+Reset Game
