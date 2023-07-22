@@ -53,3 +53,6 @@ function game() {
       alert("Hurray! Once again the human brain conquered the machine! - Game Over")
   }
 }
+
+const btn = document.getElementById("start");
+btn.addEventListener('click', game);
