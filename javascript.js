@@ -3,7 +3,7 @@ let computerLife = 0;
 const playerP = document.querySelector("#playerP");
 const computerP = document.querySelector("#computerP");
 const choices = document.querySelector(".choices");
-const moderator = document.querySelector(".moderator");
+const moderator = document.querySelector(".moderator p");
 
 choices.addEventListener('click', (e) => {
   game(e.target.id);
@@ -34,8 +34,7 @@ function game(weapon) {
   if (playRound(playerSelection, computerSelection) == "playerWin") {
       playerLife += 1;
       let msg = `You've won! ${playerSelection.substring(0, 1).toUpperCase()+playerSelection.substring(1)}` +
-                ` beats ${computerSelection.substring(0, 1).toUpperCase()+computerSelection.substring(1)}.` +
-                ` Player: ${playerLife} | Computer: ${computerLife}`;
+                ` beats ${computerSelection.substring(0, 1).toUpperCase()+computerSelection.substring(1)}.`
       console.log(msg);
       // alert(msg);
       moderator.textContent = msg;
@@ -43,14 +42,13 @@ function game(weapon) {
   } else if (playRound(playerSelection, computerSelection) == "computerWin") {
       computerLife += 1;
       let msg = `You've lost! ${computerSelection.substring(0, 1).toUpperCase()+computerSelection.substring(1)}` +
-                ` beats ${playerSelection.substring(0, 1).toUpperCase()+playerSelection.substring(1)}.` + 
-                ` Player: ${playerLife} | Computer: ${computerLife}`;
+                ` beats ${playerSelection.substring(0, 1).toUpperCase()+playerSelection.substring(1)}.`
       console.log(msg);
       // alert(msg);
       moderator.textContent = msg
       computerP.textContent = `Machine: ${computerLife}`;
   } else {
-      let msg = `That was a tie, try again. Player: ${playerLife} | Computer: ${computerLife}`
+      let msg = `That was a tie, try again.`
       console.log(msg);
       // alert(msg);
       moderator.textContent = msg
