@@ -3,6 +3,7 @@ let computerLife = 0;
 const playerP = document.querySelector("#playerP");
 const computerP = document.querySelector("#computerP");
 const choices = document.querySelector(".choices");
+const moderator = document.querySelector(".moderator");
 
 choices.addEventListener('click', (e) => {
   game(e.target.id);
@@ -23,9 +24,8 @@ function playRound(playerSelection, computerSelection) {
     : "computerWin";
 }
 
-// Determine START and END of game and keep track of points
+// Determine Player and Computer Choice for each round, keep track of points, and eventually declare winner
 function game(weapon) {
-
   const playerSelection = weapon;
   const computerSelection = getComputerChoice();
 
@@ -37,7 +37,8 @@ function game(weapon) {
                 ` beats ${computerSelection.substring(0, 1).toUpperCase()+computerSelection.substring(1)}.` +
                 ` Player: ${playerLife} | Computer: ${computerLife}`;
       console.log(msg);
-      alert(msg);
+      // alert(msg);
+      moderator.textContent = msg;
       playerP.textContent = `Player: ${playerLife}`;
   } else if (playRound(playerSelection, computerSelection) == "computerWin") {
       playerLife += 1;
@@ -45,23 +46,26 @@ function game(weapon) {
                 ` beats ${playerSelection.substring(0, 1).toUpperCase()+playerSelection.substring(1)}.` + 
                 ` Player: ${playerLife} | Computer: ${computerLife}`;
       console.log(msg);
-      alert(msg);
+      // alert(msg);
+      moderator.textContent = msg
       computerP.textContent = `Machine: ${computerLife}`;
   } else {
       let msg = `That was a tie, try again. Player: ${playerLife} | Computer: ${computerLife}`
       console.log(msg);
-      alert(msg);
+      // alert(msg);
+      moderator.textContent = msg
   }
   // Declare WINNER of game
   if (playerLife == 5 || computerLife == 5) {
     if (playerLife == 5) {
-        console.log("The computer won, as you knew he would! - Game Over")
-        alert("The computer won, as you knew he would! - Game Over");
+        console.log("The computer won, as you knew he would! - Game Over");
+        let msg = "The computer won, as you knew he would! - Game Over";
+        moderator.textContent = msg
     } else {
-        console.log("Hurray! Once again the human brain conquered the machine! - Game Over")
-        alert("Hurray! Once again the human brain conquered the machine! - Game Over")
+        console.log("Hurray! Once again the human brain conquered the machine! - Game Over");
+        let msg = "Hurray! Once again the human brain conquered the machine! - Game Over";
+        moderator.textContent = msg
     }
-  gameReset();
   }
 }
 
@@ -70,4 +74,5 @@ function gameReset() {
   computerLife = 0;
   playerP.textContent = `Player: 0`
   computerP.textContent = `Machine: 0`
+  moderator.textContent = "And so it begins..."
 }
