@@ -32,7 +32,7 @@ function game(weapon) {
   playRound(playerSelection, computerSelection);
 
   if (playRound(playerSelection, computerSelection) == "playerWin") {
-      computerLife += 1;
+      playerLife += 1;
       let msg = `You've won! ${playerSelection.substring(0, 1).toUpperCase()+playerSelection.substring(1)}` +
                 ` beats ${computerSelection.substring(0, 1).toUpperCase()+computerSelection.substring(1)}.` +
                 ` Player: ${playerLife} | Computer: ${computerLife}`;
@@ -41,7 +41,7 @@ function game(weapon) {
       moderator.textContent = msg;
       playerP.textContent = `Player: ${playerLife}`;
   } else if (playRound(playerSelection, computerSelection) == "computerWin") {
-      playerLife += 1;
+      computerLife += 1;
       let msg = `You've lost! ${computerSelection.substring(0, 1).toUpperCase()+computerSelection.substring(1)}` +
                 ` beats ${playerSelection.substring(0, 1).toUpperCase()+playerSelection.substring(1)}.` + 
                 ` Player: ${playerLife} | Computer: ${computerLife}`;
