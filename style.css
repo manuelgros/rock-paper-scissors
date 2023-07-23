@@ -11,13 +11,13 @@ h1, h2 {
   font-family: 'Courier New', Courier, monospace;
 }
 
-.start {
+.choices {
   display: flex;
   justify-content:space-evenly;
   margin-bottom: 20px;
 }
 
-.start button {
+.choices button {
   display: flex;
   flex: 1;
   justify-content: center;
@@ -31,7 +31,7 @@ h1, h2 {
   margin: auto 20px;
 }
 
-.start button:hover {
+.choices button:hover {
   background-color: rgb(253,254,38);
 }
 
