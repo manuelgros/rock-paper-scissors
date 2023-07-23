@@ -35,6 +35,10 @@ h1, h2 {
   background-color: rgb(253,254,38);
 }
 
+.choicesHidden {
+  display: none;
+} 
+
 .points {
   display: flex;
   justify-content:space-evenly;
