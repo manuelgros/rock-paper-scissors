@@ -1,5 +1,5 @@
-let playerLife = 0;
-let computerLife = 0;
+let playerPoints = 0;
+let computerPoints = 0;
 const playerP = document.querySelector("#playerP");
 const computerP = document.querySelector("#computerP");
 const choices = document.querySelector(".choices");
@@ -32,21 +32,21 @@ function game(weapon) {
   playRound(playerSelection, computerSelection);
 
   if (playRound(playerSelection, computerSelection) == "playerWin") {
-      playerLife += 1;
+      playerPoints += 1;
       let msg = `You've won! ${playerSelection.substring(0, 1).toUpperCase()+playerSelection.substring(1)}` +
                 ` beats ${computerSelection.substring(0, 1).toUpperCase()+computerSelection.substring(1)}.`
       console.log(msg);
       // alert(msg);
       moderator.textContent = msg;
-      playerP.textContent = `Player: ${playerLife}`;
+      playerP.textContent = `Player: ${playerPoints}`;
   } else if (playRound(playerSelection, computerSelection) == "computerWin") {
-      computerLife += 1;
+      computerPoints += 1;
       let msg = `You've lost! ${computerSelection.substring(0, 1).toUpperCase()+computerSelection.substring(1)}` +
                 ` beats ${playerSelection.substring(0, 1).toUpperCase()+playerSelection.substring(1)}.`
       console.log(msg);
       // alert(msg);
       moderator.textContent = msg
-      computerP.textContent = `Machine: ${computerLife}`;
+      computerP.textContent = `Machine: ${computerPoints}`;
   } else {
       let msg = `That was a tie, try again.`
       console.log(msg);
@@ -54,8 +54,8 @@ function game(weapon) {
       moderator.textContent = msg
   }
   // Declare WINNER of game
-  if (playerLife == 5 || computerLife == 5) {
-    if (playerLife == 5) {
+  if (playerPoints == 5 || computerPoints == 5) {
+    if (playerPoints == 5) {
         console.log("The computer won, as you knew he would! - Game Over");
         let msg = "The computer won, as you knew he would! - Game Over";
         moderator.textContent = msg
@@ -68,8 +68,8 @@ function game(weapon) {
 }
 
 function gameReset() {
-  playerLife = 0;
-  computerLife = 0;
+  playerPoints = 0;
+  computerPoints = 0;
   playerP.textContent = `Player: 0`
   computerP.textContent = `Machine: 0`
   moderator.textContent = "And so it begins..."
