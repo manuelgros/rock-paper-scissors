@@ -5,6 +5,7 @@ const computerP = document.querySelector("#computerP");
 const choices = document.querySelector(".choices");
 const moderator = document.querySelector(".moderator p");
 
+// Feed argument to game() based on button selection
 choices.addEventListener('click', (e) => {
   game(e.target.id);
 })
@@ -51,18 +52,18 @@ function game(weapon) {
       let msg = `That was a tie, try again.`
       console.log(msg);
       // alert(msg);
-      moderator.textContent = msg
+      moderator.textContent = msg;
   }
   // Declare WINNER of game
   if (playerPoints == 5 || computerPoints == 5) {
     if (computerPoints == 5) {
         console.log("The computer won, as you knew he would! - Game Over");
         let msg = "The computer won, as you knew he would! - Game Over";
-        moderator.textContent = msg
+        moderator.textContent = msg;
     } else {
         console.log("Hurray! Once again the human brain conquered the machine! - Game Over");
         let msg = "Hurray! Once again the human brain conquered the machine! - Game Over";
-        moderator.textContent = msg
+        moderator.textContent = msg;
     }
   }
 }
