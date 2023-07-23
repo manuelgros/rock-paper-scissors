@@ -1,3 +1,4 @@
+// Set all needed variables
 let playerPoints = 0;
 let computerPoints = 0;
 const playerP = document.querySelector("#playerP");
@@ -10,6 +11,7 @@ choices.addEventListener('click', (e) => {
   game(e.target.id);
 })
 
+// Get Computer Choice
 function getComputerChoice() { 
   const choices = ['rock', 'paper', 'scissors']
   const computerChoice = choices[Math.floor(Math.random() *choices.length)];
@@ -68,6 +70,7 @@ function game(weapon) {
   }
 }
 
+// Reset the game
 function gameReset() {
   playerPoints = 0;
   computerPoints = 0;
