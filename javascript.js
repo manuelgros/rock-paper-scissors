@@ -55,7 +55,7 @@ function game(weapon) {
   }
   // Declare WINNER of game
   if (playerPoints == 5 || computerPoints == 5) {
-    if (playerPoints == 5) {
+    if (computerPoints == 5) {
         console.log("The computer won, as you knew he would! - Game Over");
         let msg = "The computer won, as you knew he would! - Game Over";
         moderator.textContent = msg
