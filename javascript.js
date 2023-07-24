@@ -71,6 +71,9 @@ function game(weapon) {
 }
 
 // Reset the game
+const reset = document.querySelector("#reset");
+reset.addEventListener('click', gameReset);
+
 function gameReset() {
   playerPoints = 0;
   computerPoints = 0;
