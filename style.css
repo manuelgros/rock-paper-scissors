@@ -35,7 +35,7 @@ h1, h2 {
   background-color: rgb(253,254,38);
 }
 
-.choicesHidden {
+.choices .hiddenBtn {
   display: none;
 } 
 
