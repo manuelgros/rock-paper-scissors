@@ -67,6 +67,7 @@ function game(weapon) {
         let msg = "Hurray! Once again the human brain conquered the machine! - Game Over";
         moderator.textContent = msg;
     }
+    deactivateBtn();
   }
 }
 
@@ -80,4 +81,20 @@ function gameReset() {
   playerP.textContent = `Player: 0`
   computerP.textContent = `Machine: 0`
   moderator.textContent = "And so it begins..."
+  activateBtn();
+}
+
+// Deactivate / Activate Choice Buttons when game ends
+const btn = document.querySelectorAll(".btn")
+
+function deactivateBtn() {
+  for(i = 0; i < btn.length; i++) {
+    btn[i].disabled = true;
+  }
+}
+
+function activateBtn() {
+  for(i = 0; i < btn.length; i++) {
+    btn[i].disabled = false;
+  }
 }
